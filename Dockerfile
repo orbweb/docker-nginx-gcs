@@ -9,7 +9,8 @@ RUN         apt-get update && \
             curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
             apt-get update && \
             apt-get install -y gcsfuse && \
-            apt-get remove -y curl
+            apt-get remove -y curl && \
+            rm -rf /var/lib/apt/lists/*
 
 ENV         GCS_BUCKETS=
 ENV         CACHE_TTL=1h
